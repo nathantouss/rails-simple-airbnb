@@ -1,0 +1,25 @@
+<h1>Flats</h1>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <!-- Add an image if you have a picture attribute in your Flat model -->
+
+
+
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><strong>Location:</strong> <%= flat.address %></p>
+          <p class="card-text"><strong>Price:</strong> <%= flat.price_per_night %></p>
+          <!-- Add more details for other attributes as needed -->
+
+          <%= link_to 'View Details', flat_path(flat), class: 'btn btn-primary btn-sm' %>
+          <!-- Add links to edit and delete actions if needed -->
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%#= link_to 'New Flat', new_flat_path, class: 'btn btn-success' %>
